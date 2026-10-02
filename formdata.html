@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Data Mahasiswa</title>
+</head>
+<body>
+
+<h2>FORM DATA MAHASISWA</h2>
+
+<form onsubmit="return validasiHobi()">
+
+    <label>NIM</label>
+    <input type="text" name="nim" required>
+    <br><br>
+
+    <label>Nama</label>
+    <input type="text" name="nama" required>
+    <br><br>
+
+    <label>Tanggal Lahir</label>
+    <input type="date" name="tanggal_lahir" required>
+    <br><br>
+
+    <label>Jenis Kelamin</label>
+    <input type="radio" name="jenis_kelamin" value="Laki-Laki" required>
+    Laki-Laki
+    <input type="radio" name="jenis_kelamin" value="Perempuan">
+    Perempuan
+    <input type="radio" name="jenis_kelamin" value="Sembarang wes sak karepmu" required>
+    Sembarang wes sak karepmu
+    <br><br>
+
+    <label>Alamat rumah mu -__-</label>
+    <br>
+    <textarea name="alamat" rows="5" cols="40" required></textarea>
+    <br><br>
+
+    <label>Tinggal di</label>
+    <select name="tempat_tinggal" required>
+        <option value="">--pilih--</option>
+        <option value="Kos/Kontrakan">Kos/Kontrakan</option>
+        <option value="Rumah saudara">Rumah saudara</option>
+        <option value="Rumah orang tua">Rumah orang tua</option>
+    </select>
+    <br><br>
+
+    <label>Hobi</label>
+    <br>
+
+    <input type="checkbox" name="hobi" value="Science">
+    Science
+
+    <input type="checkbox" name="hobi" value="Technology">
+    Technology
+
+    <input type="checkbox" name="hobi" value="Art">
+    Art
+
+    <input type="checkbox" name="hobi" value="Sport">
+    Sport
+
+    <input type="checkbox" name="hobi" value="yang lain mungkin">
+    yang lain mungkin
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+<script>
+function validasiHobi() {
+    let hobi = document.querySelectorAll('input[name="hobi"]:checked');
+
+    if (hobi.length != 2) {
+        alert("Silakan pilih tepat 2 hobi.");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
